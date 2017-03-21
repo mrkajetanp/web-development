@@ -20,7 +20,6 @@ body {
 
 .main:after {
     content: "";
-    display: block;
     height: 100px;
 }
 
@@ -37,7 +36,6 @@ body {
 }
 
 .main article {
-    float: left;
     width: 57%;
 }
 
