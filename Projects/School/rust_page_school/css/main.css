@@ -12,6 +12,7 @@ body {
 .title {
     float: left;
     color: white;
+    padding-top: 3px;
 }
 
 .main {
@@ -24,8 +25,14 @@ body {
 }
 
 .header-container {
-    background: #f16529;
-    border-bottom: 20px solid #e44d26;
+    background: #428bca;
+    border-bottom: 20px solid #34495e;
+}
+
+.header-container img {
+    float: left;
+    margin-top: 6px;
+    margin-right: 12px;
 }
 
 .header-container,
@@ -42,8 +49,8 @@ body {
 .main aside {
     float: right;
     width: 28%;
-    border-top: 20px solid #e44d26;
-    background: #f16529;
+    border-top: 20px solid #34495e;
+    background: #428bca;
     color: white;
     margin-top: 30px;
     padding: 0px 5% 10px;
@@ -78,12 +85,12 @@ nav a {
 
     margin: 0 1.7%;
     color: white;
-    background: #e44d26;
+    background: #34495e;
 }
 
 .footer-container {
-    border-top: 20px solid #e44d26;
-    background: #f16529;
+    border-top: 20px solid #34495e;
+    background: #428bca;
     overflow: hidden;
     height: 101px;
     width: 100%;
