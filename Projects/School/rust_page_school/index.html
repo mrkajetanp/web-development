@@ -31,57 +31,92 @@
             <div class="main wrapper clearfix">
 
                 <aside>
-                    <h3>aside</h3>
-                    <p>
-                        Erat pellentesque adipiscing commodo elit, at imperdiet dui accumsan sit amet nulla! Risus, quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum.
-                    </p>
+                    <h3>Spis Treści:</h3>
+                    <ul id="toc-main">
+                        <li><a href="#rust">Rust</a></li>
+                        <li><a href="#usage">Zastosowania</a></li>
+                        <li><a href="#features">Cechy</a></li>
+                        <li><a href="#advantages">Przewaga nad C</a></li>
+                        <li><a href="#safety">Gwarancja bezpieczeństwa</a></li>
+                        <li><a href="#generics">Generic types</a></li>
+                        <li><a href="#oop">Object Oriented Programming</a></li>
+                        <li><a href="#unsafe">Omijanie bezpieczeństwa</a></li>
+                        <li><a href="#community">Społeczność</a></li>
+                        <li><a href="#pages">Użyteczne strony internetowe</a></li>
+                    </ul>
                 </aside>
-
                 <article>
                     <header>
                         <br>
                         <h1>Strona Główna</h1>
-                        <p>
-                            Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat nam? Ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus.
-                        </p>
                     </header>
-                    <section>
-                        <h2>article s h2</h2>
+                    <section id="rust">
+                        <h2>Rust</h2>
                         <p>
-                            Aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices. Nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id!
+                            Rust jest systemowym językiem programowania. Jego największymi zaletami są szybkość, zapobieganie problemom z pamięcią oraz gwarancja bezpieczeństwa wątków w programowaniu wielowątkowym. Bez wątpienia istotna jest także aktywna, rozwijająca się społeczność.
                         </p>
                     </section>
-                    <section>
-                        <h2>article s h2</h2>
+                    <section id="usage">
+                        <h2>Zastosowania</h2>
                         <p>
-                            Sagittis, purus sit amet volutpat consequat, mauris nunc congue nisi, vitae suscipit tellus mauris a? Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate?
+                            Z racji bycia systemowym językiem programowania, wachlarz zastosowań Rusta w dużej mierze pokrywa się z zastosowaniami języka C. Jest najlepiej przystosowany do pisania takich rzeczy jak np. jądra systemów operacjyjnych czy też oprogramowanie wymagające dużej wydajności i kontroli nad pamięcią, jak chociażby silniki przeglądarek internetowych, implementacje protokołu HTTP, a nawet silniki gier komputerowych.
                         </p>
                     </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>
-                            Posuere lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl, condimentum id venenatis a, condimentum vitae sapien pellentesque habitant morbi.
-                        </p>
-                    </footer>
                 </article>
-                <section>
-                    <h2>article s h2</h2>
+                    <section id="features">
+                        <h2>Cechy</h2>
+                        <p>
+                            Rust jest językiem niskopoziomowym, więc w przeciwieństwie do chociażby Javy lub C# nie ma czegoś takiego jak garbage collector. Tak samo jak w C, do alokacji pamięci jest używany zarówno stack jak i heap, w zależności od potrzeb programisty. Dealokacja pamięci z heap przebiega przy użyciu destruktorów, podobnie jak w C++. Do tego Rust oferuje nam pewność całkowitego bezpieczeństwa w kwestii zarządzania pamięcią programu.
+                        </p>
+                    </section>
+                    <section id="advantages">
+                        <h2>Przewaga nad C</h2>
+                        <p>
+                            Przede wszystkim, każdy programista C wie jaki problem stwarzają niezainicjalizowane wskaźniki, jak uciążliwe może być wywoływanie free() dla każdej ręcznie alokowanej zmiennej, zwłaszcza kiedy dochodzi do sytuacji z "double free". W przypadku programowania wielowątkowego, kiedy nasz program robi się "duży", data races stają się istnym koszmarem. System bezpieczeństwa Rusta gwarantuje że żaden wskaźnik nie może pozostać bez inicjalizacji a data races nie mogą wystąpić. Dealokacja pamięci nie jest zadaniem programisty, więc żadna pamięć nie będzie zwolniona dwukrotnie.
+                        </p>
+                    </section>
+                <section id="safety">
+                    <h2>Gwarancja bezpieczeństwa</h2>
                     <p>
-                        Aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices. Nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id!
+                        Największą zaletą Rusta jest to, że sprawdzanie bezpieczeństwa programu przebiega już w czasie kompilacji. Oznacza to że program, który przez przypadek nie będzie całkowicie bezpieczny nie będzie możliwy do skompilowania, ale także że nie wpłynie to w żaden sposób na wydajność naszego gotowego programu. W ten sposób Rust zachowuje taką samą prędkość jak C.
                     </p>
                 </section>
-                        <section>
-                            <h2>article s h2</h2>
-                            <p>
-                                Sagittis, purus sit amet volutpat consequat, mauris nunc congue nisi, vitae suscipit tellus mauris a? Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate?
-                            </p>
-                        </section>
-                                <footer>
-                                    <h3>article footer h3</h3>
-                                    <p>
-                                        Posuere lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl, condimentum id venenatis a, condimentum vitae sapien pellentesque habitant morbi.
-                                    </p>
-                                </footer>
+                <section id="generics">
+                    <h2>Generic types</h2>
+                    <p>
+                        Używając C, aby zbudować funkcję czy strukturę danych która działałaby niezależnie od typu, konieczne jest użycie void pointers, castowanie, przy czym cały proces jest uciążliwy i mało intuicyjny. Rust pozwala na definiowanie generic functions lub types z taką łatwością jak chociażby C#, przy czym abstrakcje istnieją tylko w czasie kompilacji więc w żaden sposób nie spowalnia to naszego programu.
+                    </p>
+                </section>
+                <section id="oop">
+                    <h2>Object Oriented Programming</h2>
+                    <p>
+                        Rust nie zna pojęcia "klasy", w tej roli używane są struktury. Struct wygląda praktycznie tak samo jak w języku C, z tym że możliwe jest definiowanie na nim metod, co sprawia że Struct działa bardzo podobnie do klasy w C++ (oczywiście nie identycznie). Język zachowuje balans między całkowitą orientacją obiektową Javy a proceduralnością C.
+                    </p>
+                </section>
+                <section id="unsafe">
+                    <h2>Omijanie bezpieczeństwa</h2>
+                    <p>
+                        System bezpieczeństwa z założenia nie pozwoli na skompilowanie kodu który <b>może</b> być niebezpieczny. Jednak czasami zdarzają się sytuacje w których programista jest w stanie zagwarantować że dany fragment kodu jest bezpieczny, nawet jeśli kompilator nie może tego sprawdzić. Pojawia się to chociażby w przypadku "raw pointers", czyli wskaźników takich jak te używane przez C. Stworzenie i np. przekazywanie takiego wskaźnika zawsze jest bezpieczne, natomiast dereferencing już nie. Powodowane jest to tym, że taki wskaźnik może nie być zainicjalizowany. Programista może wiedzieć że w tym punkcie ten wskaźnik zawsze wskazuje prawidłowy fragment pamięci, jednak kompilator nie może uznać takiego kodu za "bezpieczny". Dlatego też Rust pozwala "ominąć" system bezpieczeństwa umieszczając taki kod w bloku unsafe { }. Blok unsafe nie pozwala na "wszystko", ale w sytuacjach takich jak ta opisana powyżej jest bardzo użyteczny.
+                    </p>
+                </section>
+                <section id="community">
+                    <h2>Społeczność</h2>
+                    <p>
+                        Jedną z największych zalet Rusta jest oddana i bardzo aktywna społeczność. Mimo to że Rust jest bardzo młodym językiem, nie jest (jeszcze) bardzo popularny, to przyciąga on duże grupy pasjonatów. Jest całkowicie open source, więc każdy chętny może pomóc w rozwijaniu języka czy nawet pisaniu dokumentacji przez repozytorium na GitHubie. Sam rozwój przebiega bardzo dynamicznie w trzech "kanałach" - nightly, beta i stable. Kolejne wersje nightly wychodzą każdego dnia i odzwierciedlają aktualne prace nad językiem, eksperymentalne features itd. Co 6 tygodni aktualna wersja nightly staje się wersją beta, po czym dostaje tylko poprawki błędów i usprawnienia wydajności. Równocześnie aktualna wersja beta staje się wersją stable. Tak więc nowa "wersja" Rusta powstaje co 6 tygodni. Aktualizacje stable gwarantują że nie spowodują problemów z działaniem kodu napisanego w poprzednich wersjach stable.
+                    </p>
+                </section>
+                <section id="pages">
+                    <h2>Użyteczne strony internetowe</h2>
+                    <p>
+                        Odnośniki do stron związanych z Rustem:
+                        <ul id="useful-pages">
+                            <li><a href="https://www.rust-lang.org">Oficjalna strona języka</a></li>
+                            <li><a href="https://github.com/rust-lang/rust">Repozytorium GitHub</a></li>
+                            <li><a href="https://doc.rust-lang.org/std/">Dokumentacja Standardowej Biblioteki</a></li>
+                            <li><a href="https://github.com/servo/servo">"Flagowy" Projekt - Web Browser Engine Servo</a></li>
+                        </ul>
+                    </p>
+                </section>
                 </article>
             </div>
         </div>

@@ -9,6 +9,36 @@ body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
+ul#useful-pages {
+    list-style-type: square;
+}
+
+ul#useful-pages a {
+    color: #428bca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#useful-pages a:hover, a:active {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+ul#toc-main {
+    list-style-type: square;
+}
+
+ul#toc-main a:link, a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#toc-main a:hover, a:active {
+    color: white;
+    text-decoration: underline;
+}
+
 .title {
     float: left;
     color: white;
@@ -86,6 +116,10 @@ nav a {
     margin: 0 1.7%;
     color: white;
     background: #34495e;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 .footer-container {
