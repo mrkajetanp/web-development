@@ -55,6 +55,7 @@
                         <p>
                             Rust jest systemowym językiem programowania. Jego największymi zaletami są szybkość, zapobieganie problemom z pamięcią oraz gwarancja bezpieczeństwa wątków w programowaniu wielowątkowym. Bez wątpienia istotna jest także aktywna, rozwijająca się społeczność.
                         </p>
+                        <img alt="" src="img/example_main.png"/>
                     </section>
                     <section id="usage">
                         <h2>Zastosowania</h2>
@@ -63,18 +64,18 @@
                         </p>
                     </section>
                 </article>
-                    <section id="features">
-                        <h2>Cechy</h2>
-                        <p>
-                            Rust jest językiem niskopoziomowym, więc w przeciwieństwie do chociażby Javy lub C# nie ma czegoś takiego jak garbage collector. Tak samo jak w C, do alokacji pamięci jest używany zarówno stack jak i heap, w zależności od potrzeb programisty. Dealokacja pamięci z heap przebiega przy użyciu destruktorów, podobnie jak w C++. Do tego Rust oferuje nam pewność całkowitego bezpieczeństwa w kwestii zarządzania pamięcią programu.
-                        </p>
-                    </section>
-                    <section id="advantages">
-                        <h2>Przewaga nad C</h2>
-                        <p>
-                            Przede wszystkim, każdy programista C wie jaki problem stwarzają niezainicjalizowane wskaźniki, jak uciążliwe może być wywoływanie free() dla każdej ręcznie alokowanej zmiennej, zwłaszcza kiedy dochodzi do sytuacji z "double free". W przypadku programowania wielowątkowego, kiedy nasz program robi się "duży", data races stają się istnym koszmarem. System bezpieczeństwa Rusta gwarantuje że żaden wskaźnik nie może pozostać bez inicjalizacji a data races nie mogą wystąpić. Dealokacja pamięci nie jest zadaniem programisty, więc żadna pamięć nie będzie zwolniona dwukrotnie.
-                        </p>
-                    </section>
+                <section id="features">
+                    <h2>Cechy</h2>
+                    <p>
+                        Rust jest językiem niskopoziomowym, więc w przeciwieństwie do chociażby Javy lub C# nie ma garbage collector. Tak samo jak w C, do alokacji pamięci jest używany zarówno stack jak i heap, w zależności od potrzeb programisty. Dealokacja pamięci z heap przebiega przy użyciu destruktorów, podobnie jak w C++. Do tego Rust oferuje nam pewność całkowitego bezpieczeństwa w kwestii zarządzania pamięcią programu.
+                    </p>
+                </section>
+                <section id="advantages">
+                    <h2>Przewaga nad C</h2>
+                    <p>
+                        Przede wszystkim, każdy programista C wie jaki problem stwarzają niezainicjalizowane wskaźniki, jak uciążliwe może być wywoływanie free() dla każdej ręcznie alokowanej zmiennej, zwłaszcza kiedy dochodzi do sytuacji z "double free". W przypadku programowania wielowątkowego, kiedy nasz program robi się "duży", data races stają się istnym koszmarem. System bezpieczeństwa Rusta gwarantuje że żaden wskaźnik nie może pozostać bez inicjalizacji a data races nie mogą wystąpić. Dealokacja pamięci nie jest zadaniem programisty, więc żadna pamięć nie będzie zwolniona dwukrotnie.
+                    </p>
+                </section>
                 <section id="safety">
                     <h2>Gwarancja bezpieczeństwa</h2>
                     <p>
@@ -90,7 +91,7 @@
                 <section id="oop">
                     <h2>Object Oriented Programming</h2>
                     <p>
-                        Rust nie zna pojęcia "klasy", w tej roli używane są struktury. Struct wygląda praktycznie tak samo jak w języku C, z tym że możliwe jest definiowanie na nim metod, co sprawia że Struct działa bardzo podobnie do klasy w C++ (oczywiście nie identycznie). Język zachowuje balans między całkowitą orientacją obiektową Javy a proceduralnością C.
+                        Rust nie zna pojęcia "klasy", w tej roli używane są struktury. Struktura wygląda praktycznie tak samo jak w języku C, z tym że możliwe jest definiowanie na niej metod, co sprawia że struktura działa bardzo podobnie do klasy w C++ (oczywiście nie identycznie). Język zachowuje balans między całkowitą orientacją obiektową Javy a proceduralnością C.
                     </p>
                 </section>
                 <section id="unsafe">
@@ -111,9 +112,11 @@
                         Odnośniki do stron związanych z Rustem:
                         <ul id="useful-pages">
                             <li><a href="https://www.rust-lang.org">Oficjalna strona języka</a></li>
+                            <li><a href="https://doc.rust-lang.org/nightly/book/second-edition/">"The Book" - Oficjalna książka do nauki języka</a></li>
+                            <li><a href="https://doc.rust-lang.org/std/">Dokumentacja standardowej biblioteki</a></li>
                             <li><a href="https://github.com/rust-lang/rust">Repozytorium GitHub</a></li>
-                            <li><a href="https://doc.rust-lang.org/std/">Dokumentacja Standardowej Biblioteki</a></li>
-                            <li><a href="https://github.com/servo/servo">"Flagowy" Projekt - Web Browser Engine Servo</a></li>
+                            <li><a href="https://github.com/servo/servo">"Flagowy" projekt - web browser engine Servo</a></li>
+
                         </ul>
                     </p>
                 </section>
