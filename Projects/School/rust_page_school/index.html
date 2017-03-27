@@ -55,7 +55,7 @@
                         <p>
                             Rust jest systemowym językiem programowania. Jego największymi zaletami są szybkość, zapobieganie problemom z pamięcią oraz gwarancja bezpieczeństwa wątków w programowaniu wielowątkowym. Bez wątpienia istotna jest także aktywna, rozwijająca się społeczność.
                         </p>
-                        <img alt="" src="img/example_main.png"/>
+                        <img alt="main example" src="img/example_main.png"/>
                     </section>
                     <section id="usage">
                         <h2>Zastosowania</h2>
@@ -85,20 +85,23 @@
                 <section id="generics">
                     <h2>Generic types</h2>
                     <p>
-                        Używając C, aby zbudować funkcję czy strukturę danych która działałaby niezależnie od typu, konieczne jest użycie void pointers, castowanie, przy czym cały proces jest uciążliwy i mało intuicyjny. Rust pozwala na definiowanie generic functions lub types z taką łatwością jak chociażby C#, przy czym abstrakcje istnieją tylko w czasie kompilacji więc w żaden sposób nie spowalnia to naszego programu.
+                        Używając C, aby napisać funkcję czy strukturę danych która działałaby niezależnie od typu danych, konieczne jest użycie void pointers, castowanie, przy czym cały proces jest uciążliwy i mało intuicyjny. Rust pozwala na definiowanie generic functions lub types z taką łatwością jak chociażby C#, przy czym abstrakcje istnieją tylko w czasie kompilacji więc w żaden sposób nie spowalnia to naszego programu.
                     </p>
+                    <img alt="generics example" src="img/example_generics.png"/>
                 </section>
                 <section id="oop">
                     <h2>Object Oriented Programming</h2>
                     <p>
-                        Rust nie zna pojęcia "klasy", w tej roli używane są struktury. Struktura wygląda praktycznie tak samo jak w języku C, z tym że możliwe jest definiowanie na niej metod, co sprawia że struktura działa bardzo podobnie do klasy w C++ (oczywiście nie identycznie). Język zachowuje balans między całkowitą orientacją obiektową Javy a proceduralnością C.
+                        Rust nie ma pojęcia "klasy", w tej roli używane są struktury. Struktura wygląda praktycznie tak samo jak w języku C, z tym że możliwe jest definiowanie na niej metod, co sprawia że struktura działa bardzo podobnie do klasy w C++ (oczywiście nie identycznie). Język zachowuje balans między całkowitą orientacją obiektową Javy a proceduralnością C.
                     </p>
+                    <img alt="oop example" src="img/example_oop.png"/>
                 </section>
                 <section id="unsafe">
                     <h2>Omijanie bezpieczeństwa</h2>
                     <p>
                         System bezpieczeństwa z założenia nie pozwoli na skompilowanie kodu który <b>może</b> być niebezpieczny. Jednak czasami zdarzają się sytuacje w których programista jest w stanie zagwarantować że dany fragment kodu jest bezpieczny, nawet jeśli kompilator nie może tego sprawdzić. Pojawia się to chociażby w przypadku "raw pointers", czyli wskaźników takich jak te używane przez C. Stworzenie i np. przekazywanie takiego wskaźnika zawsze jest bezpieczne, natomiast dereferencing już nie. Powodowane jest to tym, że taki wskaźnik może nie być zainicjalizowany. Programista może wiedzieć że w tym punkcie ten wskaźnik zawsze wskazuje prawidłowy fragment pamięci, jednak kompilator nie może uznać takiego kodu za "bezpieczny". Dlatego też Rust pozwala "ominąć" system bezpieczeństwa umieszczając taki kod w bloku unsafe { }. Blok unsafe nie pozwala na "wszystko", ale w sytuacjach takich jak ta opisana powyżej jest bardzo użyteczny.
                     </p>
+                    <img alt="unsafe example" src="img/example_unsafe.png"/>
                 </section>
                 <section id="community">
                     <h2>Społeczność</h2>

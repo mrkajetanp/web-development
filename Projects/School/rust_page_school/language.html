@@ -31,38 +31,80 @@
             <div class="main wrapper clearfix">
 
                 <aside>
-                    <h3>aside</h3>
-                    <p>
-                        Erat pellentesque adipiscing commodo elit, at imperdiet dui accumsan sit amet nulla! Risus, quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum.
-                    </p>
+                    <h3>Spis Treści:</h3>
+                    <ul id="toc-main">
+                        <li><a href="#var-bindings-mutability">Wiązania zmiennych i mutability</a></li>
+                        <li><a href="#type-annotations">Adnotacje typów</a></li>
+                        <li><a href="#conditionals">Instrukcje warunkowe</a></li>
+                        <li><a href="#loops">Pętle</a></li>
+                        <li><a href="#pattern-matching">Pattern matching</a></li>
+                        <li><a href="#strings">Strings</a></li>
+                        <li><a href="#traits">Traits</a></li>
+                        <li><a href="#vectors">Vectors</a></li>
+                    </ul>
                 </aside>
 
                 <article>
                     <header>
                         <br>
                         <h1>Język</h1>
-                        <p>
-                            Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat nam? Ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus.
-                        </p>
                     </header>
-                    <section>
-                        <h2>article s h2</h2>
+                    <section id="var-bindings-mutability">
+                        <h2>Wiązania zmiennych i mutability</h2>
                         <p>
-                            Aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices. Nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id!
+                            Rust nie korzysta ze zmiennych w takim samym znaczeniu jak np. język C. Zamiast tego istnieją tzw. wiązania zmiennych (variable bindings) które działają bardzo podobnie, ale jednak nie identycznie. Wiązanie "wiąże" konkretną wartość z nazwą. Aby je stworzyć, używamy "let". Różnią się one np. tym, że po lewej stronie let statement znajduje się pattern, a nie po prostu nazwa zmiennej. Domyślnie wiązania zmiennych są immutable, czyli nie mogą być zmienione. Możemy zadeklarować że wartość danego wiązania będzie zmieniana używając "mut".
+                        </p>
+                        <img alt="var bindings & mut example" src="img/example_var_bindings_mutability.png"/>
+                    </section>
+                    <section id="type-annotations">
+                        <h2>Adnotacje typów</h2>
+                        <p>
+                            Rust jest statycznie typowanym językiem, czyli typy wszystkich zmiennych muszą być znane w czasie kompilacji i nie mogą się zmienić podczas działania programu. Do tego kompilator korzysta z "type inference". Oznacza to że w wielu przypadkach nie jesteśmy zmuszeni do ręcznego wypisywania typu danej zmiennej, Rust może go sam wybrać na podstawie wartości jaką przypisujemy.
+                        </p>
+                        <img alt="type annotations example" src="img/example_type_annotations.png"/>
+                    </section>
+                    <section id="conditionals">
+                        <h2>Instrukcje warunkowe</h2>
+                        <p>
+                            Instrukcje warunkowe nie różnią się zbytnio od tych znanych z innych języków programowania, jednak bardziej przypominają te z Pythona niż z C. Możemy użyć samego if, możemy dodać else, oraz jeżeli istnieje taka potrzeba - else if. W przeciwieństwie do C, if zawsze wymaga użycia klamer. Co więcej, if może zostać wykorzystane także podczas przypisywania wartości do wiązania zmiennej.
+                        </p>
+                        <img alt="conditionals example" src="img/example_conditionals.png"/>
+                    </section>
+                    <section id="loops">
+                        <h2>Pętle</h2>
+                        <p>
+                            Do wykorzystania mamy 3 rodzaje pętli. Loop - nieskończona pętla (przerywana używając break), while - pętla iterująca tak długo jak warunek jest prawdziwy, oraz for - pętla iterująca przez np. zbiór liczb, tablicę lub vector.
                         </p>
                     </section>
-                    <section>
-                        <h2>article s h2</h2>
+                    <img alt="loops example" src="img/example_loops.png"/>
+                    <section id="pattern-matching">
+                        <h2>Pattern matching</h2>
                         <p>
-                            Sagittis, purus sit amet volutpat consequat, mauris nunc congue nisi, vitae suscipit tellus mauris a? Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate?
+                            W przypadku kiedy mamy dużo możliwości, zamiast używać wielu if/else Rust oferuje nam pattern matching. Pozwala to dopasować wartość do jednej z wielu możliwości, tzw. ramion.
                         </p>
                     </section>
-                    <footer>
-                        <h3>article footer h3</h3>
+                    <img alt="pattern matching example" src="img/example_pattern_matching.png"/>
+                    <section id="strings">
+                        <h2>Strings</h2>
                         <p>
-                            Posuere lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl, condimentum id venenatis a, condimentum vitae sapien pellentesque habitant morbi.
+                            Rust wykorzystuje dwa rodzaje zmiennych tekstowych. Pierwsza to &str, czyli string slice ma stałą długość i nie może być zmieniony, tak samo jak string literals w C. Jest to wskaźnik do ciągu bajtów zakodowanych w UTF-8. Drugi rodzaj to "klasa" String, alokowana na heap, może zmieniać swój rozmiar w trakcie działania programu. Dostępna jest wygodna konwersja &str -> String używając metody to_string(). W przeciwieństwie do C, strings w Rust nie mogą być indexowane jako tablica char.
                         </p>
-                    </footer>
+                    <img alt="strings example" src="img/example_strings.png"/>
+                    </section>
+                    <section id="traits">
+                        <h2>Traits</h2>
+                        <p>
+                            Trait pozwala nam zaznaczyć jaką funkcjonalność dany typ musi oferować. Przykładowo, struktury reprezentujące prostokąt i trójkąt muszą pozwalać na obliczenie ich pola. Trait definiujemy jako zestaw funkcji które następnie implementujemy osobno dla każdego z typów.
+                        </p>
+                    <img alt="traits example" src="img/example_traits.png"/>
+                    </section>
+                    <section id="vectors">
+                        <h2>Vectors</h2>
+                        <p>
+                            Vector jest bardzo podobny do tego znanego z C++. Alokowany na heap, może dynamicznie zmieniać swój rozmiar oraz przechowywać elementy dowolnego (jednego) typu. Możemy go także indexować tak jak tablicę. Język oferuje makro vec![] do wygodnego tworzenia vectorów. Makro vec! posiada także drugą formę do tworzenia vectora o określonej liczbie takich samych elementów. Możemy wygodnie iterować przez vector za pomocą pętli for.
+                        </p>
+                    <img alt="vectors example" src="img/example_vectors.png"/>
+                    </section>
                 </article>
             </div>
         </div>
