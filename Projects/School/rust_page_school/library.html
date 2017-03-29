@@ -31,40 +31,92 @@
             <div class="main wrapper clearfix">
 
                 <aside>
-                    <h3>aside</h3>
-                    <p>
-                        Erat pellentesque adipiscing commodo elit, at imperdiet dui accumsan sit amet nulla! Risus, quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum.
-                    </p>
+                    <h3>Spis Treści:</h3>
+                    <ul id="toc-main">
+                        <li><a href="#organization">Organizacja</a></li>
+                        <li><a href="#core">core</a></li>
+                        <li><a href="#std">std</a></li>
+                        <li><a href="#collections">collections</a></li>
+                        <li><a href="#alloc">alloc</a></li>
+                    </ul>
                 </aside>
-
                 <article>
                     <header>
                         <br>
                         <h1>Standardowa Biblioteka</h1>
-                        <p>
-                            Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat nam? Ac auctor augue mauris augue neque, gravida in fermentum et, sollicitudin ac orci phasellus.
-                        </p>
                     </header>
-                    <section>
-                        <h2>article s h2</h2>
+                    <section id="organization">
+                        <h2>Organizacja</h2>
                         <p>
-                            Aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices. Nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id!
+                            Standardowa biblioteka Rust jest zorganizowana w tzw. crates. Pojedynczy crate jest odpowiednikiem biblioteki w większości języków oraz jest podzielony na modules, z których każdy zajmuje się jednym konkretnym zadaniem. Biblioteka, jak cały język, nieustannie się rozwija i niektóre jej części są niestabilne. Mimo to do użytku dostajemy ogrom użytecznych funkcji, struktur i typów, których znajomość pomaga w tworzeniu programów.
                         </p>
                     </section>
-                    <section>
-                        <h2>article s h2</h2>
+                    <section id="core">
+                        <h2>core</h2>
                         <p>
-                            Sagittis, purus sit amet volutpat consequat, mauris nunc congue nisi, vitae suscipit tellus mauris a? Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate?
+                            Crate core to najważniejsza część biblioteki Rusta. Jest podstawą standardowej biblioteki i nie jest zależny ani od systemu operacyjnego, ani innych bibliotek. Funkcjonalność jaką oferuje zawiera między innymi makra, takie jak assert, panic czy write oraz standardowe typy danych, np. i32, f64, u8, a także funkcjonalność taką jak borrowing, clone i fmt.
                         </p>
+                        <h3>Istotne części core crate:</h3>
+                        <ul class="crate-contents">
+                            <li>any - module implementujący trait Any</li>
+                            <li>borrow - module do pracy z "pożyczonymi" danymi</li>
+                            <li>cell - współdzielony, mutable "pojemnik" na dane</li>
+                            <li>char - manipulacja znakami</li>
+                            <li>clone - trait Clone dla typów które nie mogą być automatycznie kopiowane</li>
+                            <li>cmp - funkcjonalność do implementacji porównywania typów</li>
+                            <li>mem - podstawowe funkcje do zarządzania pamięcią</li>
+                            <li>ptr - surowe wskaźniki, *const T i *mut T</li>
+                            <li>slice - korzystanie z fragmentów stringów lub tablic</li>
+                            <li>sync - podstawowa funkcjonalność synchronizacji</li>
+                        </ul>
                     </section>
-                    <footer>
-                        <h3>article footer h3</h3>
+                    <section id="std">
+                        <h2>std</h2>
                         <p>
-                            Posuere lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl, condimentum id venenatis a, condimentum vitae sapien pellentesque habitant morbi.
+                            Crate std jest największą częścią biblioteki, w nim jest zawarta większość funkcjonalności i właśnie jego najczęściej się używa. Zawiera typy takie jak Vec<T>, Option<T>, Box<T>, Result<T,E>, operacje na prymitywnych typach, standardowe makra, I/O, operacje wielowątkowe i wiele więcej. std jest automatycznie dostępne w każdym programie.
                         </p>
-                    </footer>
+                        <h3>Istotne części std crate:</h3>
+                        <ul class="crate-contents">
+                            <li>boxed - typ wskaźnika do wygodnego alokowania zmiennych na heap</li>
+                            <li>env - interakcja ze środowiskiem procesu</li>
+                            <li>error - Traits do zarządzania błędami programu</li>
+                            <li>fs - operacje do manipulacji systemem plików</li>
+                            <li>net - podstawowa funkcjonalność do komunikacji z użyciem TCP/UDP</li>
+                            <li>option - opcjonalne zmienne</li>
+                            <li>os - funkcjonalność właściwa danemu systemowi operacyjnemu</li>
+                            <li>process - module do zarządzania procesami</li>
+                            <li>string - kodowany w UTF-8, rozszerzający się string</li>
+                            <li>thread - natywne wątki</li>
+                            <li>vec - rozszerzająca się tablica, alokowana na heap</li>
+                        </ul>
+                    </section>
                 </article>
-
+                    <section id="collections">
+                        <h2>collections</h2>
+                        <p>
+                            Crate collections zawiera struktury danych - kolekcje które są użyteczne podczas tworzenia praktycznie wszystkich rodzajów programów. Na ten moment część funkcjonalności jest dzielona z std::collections. Możemy w nim znaleźć chociażby binary heap oraz linked list.
+                        </p>
+                        <h3>Istotne części collections crate:</h3>
+                        <ul class="crate-contents">
+                            <li>binary_heap - priority queue implementowane z użyciem binary heap</li>
+                            <li>btree_map - map bazowana na B-Tree</li>
+                            <li>btree_set - set bazowany na B-Tree</li>
+                            <li>linked_list - doubly-linked list z owned nodes</li>
+                            <li>vec_deque - double-ended queue implementowana z użyciem vector</li>
+                        </ul>
+                    </section>
+                    <section id="alloc">
+                        <h2>alloc</h2>
+                        <p>
+                            Crate alloc to biblioteka najniższego poziomu oferująca funkcjonalność związaną z zarządzaniem pamięcią. Przeznaczony jest głównie do budowania innych bibliotek, nie do pisania programów użytkowych. Jej zawartość jest reeksportowana w crate std.
+                        </p>
+                        <h3>Istotne części alloc crate:</h3>
+                        <ul class="crate-contents">
+                            <li>rc - jednowątkowy, liczący referencje pointer oferujący shared ownership</li>
+                            <li>arc - atomic reference counter - rc przeznaczony do obsługi wielu wątków</li>
+                            <heap>heap - eksperymentalny module z funkcjami alokującymi i dealokującymi pamięć</heap>
+                        </ul>
+                    </section>
             </div>
         </div>
 

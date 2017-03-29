@@ -39,6 +39,10 @@ ul#toc-main a:hover, a:active {
     text-decoration: underline;
 }
 
+ul.crate-contents li {
+    list-style-type: square;
+}
+
 .title {
     float: left;
     color: white;
