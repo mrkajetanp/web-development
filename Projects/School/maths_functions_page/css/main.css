@@ -1,0 +1,163 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.5;
+    height: 100%;
+}
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+ul#useful-pages {
+    list-style-type: square;
+}
+
+ul#useful-pages a {
+    color: #428bca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#useful-pages a:hover, a:active {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+ul#toc-main {
+    list-style-type: square;
+}
+
+ul#toc-main a:link, a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul#toc-main a:hover, a:active {
+    color: white;
+    text-decoration: underline;
+}
+
+ul.crate-contents li {
+    list-style-type: square;
+}
+
+.title {
+    float: left;
+    color: white;
+    padding-top: 3px;
+}
+
+.main {
+    margin-bottom: -100px;
+}
+
+.main:after {
+    content: "";
+    height: 100px;
+}
+
+.header-container {
+    background: #428bca;
+    border-bottom: 20px solid #34495e;
+}
+
+.header-container img {
+    float: left;
+    margin-top: 6px;
+    margin-right: 12px;
+}
+
+.header-container,
+.main aside {
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
+}
+
+.main article {
+    width: 57%;
+}
+
+.main aside {
+    float: right;
+    width: 28%;
+    border-top: 20px solid #34495e;
+    background: #428bca;
+    color: white;
+    margin-top: 30px;
+    padding: 0px 5% 10px;
+}
+
+/* header position */
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+    width: 50%;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    float: left;
+    width: 27%;
+    display: block;
+    padding: 25px 2%;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    margin: 0 1.7%;
+    color: white;
+    background: #34495e;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-container {
+    border-top: 20px solid #34495e;
+    background: #428bca;
+    overflow: hidden;
+    height: 101px;
+    width: 100%;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+nav li:first-child a {
+    margin-left: 0;
+}
+
+nav li:last-child a {
+    margin-right: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
