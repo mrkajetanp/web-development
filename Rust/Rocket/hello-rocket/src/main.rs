@@ -2,6 +2,45 @@
 
 #[macro_use] extern crate rocket;
 
+use rocket::request::Form;
+use rocket::http::Cookies;
+
+// Cookies
+
+#[get("/cookies")]
+fn get_cookies(cookies: Cookies) -> Option<String> {
+    cookies.get("message")
+        .map(|value| format!("Message: {}", value))
+}
+
+// Private cookies
+#[get("/user_id")]
+fn user_id(cookies: Cookies) -> Option<String> {
+    cookies.get_private("user_id")
+        .map(|cookie| format!("User ID: {}", cookie.value()))
+}
+
+// Redirect
+
+#[get("/redirect")]
+fn redirect() -> Redirect {
+    Redirect::to("/login")
+}
+
+// Multiple segments
+
+#[derive(FromForm)]
+struct User {
+    name: String,
+    account: usize
+}
+
+#[get("/item?<id>&<user..>")]
+fn item(id: usize, user: Form<User>) {
+    // ...
+}
+
+
 #[get("/hello/<name>/<age>/<cool>")]
 fn hello(name: String, age: u8, cool: bool) -> String {
     if cool {
@@ -30,8 +69,15 @@ fn optional_queries(name: Option<&RawStr>) -> String {
         .unwrap_or_else(|| "Hello".into())
 }
 
+#[catch(404)]
+fn not_found(req: &Request) -> String {
+    "Not found.."
+}
+
 fn main() {
-    rocket::ignite().mount("/", routes![hello]).launch();
+    rocket::ignite().mount("/", routes![hello])
+        .register(catchers![not_found])
+        .launch();
 }
 
 
