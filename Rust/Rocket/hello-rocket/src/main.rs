@@ -4,6 +4,7 @@
 
 use rocket::request::Form;
 use rocket::http::Cookies;
+use rocket::response::Redirect;
 
 // Cookies
 
@@ -40,7 +41,6 @@ fn item(id: usize, user: Form<User>) {
     // ...
 }
 
-
 #[get("/hello/<name>/<age>/<cool>")]
 fn hello(name: String, age: u8, cool: bool) -> String {
     if cool {
@@ -71,7 +71,7 @@ fn optional_queries(name: Option<&RawStr>) -> String {
 
 #[catch(404)]
 fn not_found(req: &Request) -> String {
-    "Not found.."
+    String::from("Not found..")
 }
 
 fn main() {
@@ -79,5 +79,3 @@ fn main() {
         .register(catchers![not_found])
         .launch();
 }
-
-
