@@ -15,20 +15,30 @@ function getGreeting(user: any) {
     return <h1>Hello, Stranger.</h1>
 }
 
-function formatName(user: any) {
+function formatName(user: {firstName: string, lastName: string}) {
     return user.firstName + ' ' + user.lastName;
 }
 
-const element = (
-    <div>
-        <h1>Hello!</h1>
-        <h2>Good to see you here!</h2>
-    </div>
-);
+// let element = (
+//     <div>
+//         <h1>Hello!</h1>
+//         <h2>Good to see you here!</h2>
+//     </div>
+// );
+
+getGreeting(user)
+
+function Welcome(props: { name: string }) {
+    return <h1>Hello there, {props.name}</h1>;
+}
 
 const App: React.FC = () => {
   return (
-      element
+      <div>
+        <Welcome name="Sara" />
+        <Welcome name="Cahal" />
+        <Welcome name="Edite" />
+      </div>
   );
 }
 
