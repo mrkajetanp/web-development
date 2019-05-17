@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import ConditionalRendering from './ConditionalRendering';
+import ListsAndKeys from './ListsAndKeys';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<ConditionalRendering />, document.getElementById('root'));
+ReactDOM.render(<ListsAndKeys />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
