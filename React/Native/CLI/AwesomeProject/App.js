@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 // import { Text, View } from 'react-native';
 // import PizzaTranslator from './components/HandlingInput';
 // import ButtonBasics from './components/ButtonBasics';
-import Touchables from './components/Touchables';
+// import Touchables from './components/Touchables';
+// import Scrolling from './components/Scrolling';
+// import Lists from './components/Lists';
+import Networking from './components/Networking';
 
 // class Greeting extends Component {
 //     propTypes = {
@@ -21,7 +24,7 @@ import Touchables from './components/Touchables';
 export default class App extends Component {
     render() {
         return (
-            <Touchables />
+            <Networking />
         );
     }
 }

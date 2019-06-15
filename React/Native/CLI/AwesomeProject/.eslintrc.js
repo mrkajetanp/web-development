@@ -24,7 +24,11 @@ module.exports = {
         "react",
     ],
     "rules": {
+        "no-console": "off",
         "no-unused-vars": [
+            "warn",
+        ],
+        "no-constant-condition": [
             "warn",
         ],
         "indent": [
