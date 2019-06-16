@@ -27,15 +27,17 @@ class DetailsScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <Text>Details Screen</Text>
-                <Button style={{ marginTop: 20 }}
-                    title="Go to Details... again"
-                    onPress={() => this.props.navigation.push('Details')}
-                />
-                <Button
-                    title="Go to Home"
-                    onPress={() => this.props.navigation.navigate('Home')}
-                />
+                <Text style={{ color: 'red'}}>Details Screen</Text>
+                <View style={{marginBottom: 20}}>
+                    <Button
+                        title="Go to Details... again"
+                        onPress={() => this.props.navigation.push('Details')}
+                    />
+                    <Button
+                        title="Go to Home"
+                        onPress={() => this.props.navigation.navigate('Home')}
+                    />
+                </View>
                 <Button
                     title="Go back"
                     onPress={() => this.props.navigation.goBack()}
