@@ -3,6 +3,8 @@ import { Text, View, Button, StyleSheet, Image } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import PropTypes from 'prop-types';
 
+import Animations from './components/Animations';
+
 class HomeScreen extends Component {
     render() {
         return (
@@ -14,6 +16,7 @@ class HomeScreen extends Component {
                         onPress={() => this.props.navigation.navigate('Details')}
                     />
                 </View>
+                <Animations />
             </View>
         );
     }
