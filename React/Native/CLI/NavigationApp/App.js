@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button, StyleSheet } from 'react-native';
+import { Text, View, Button, StyleSheet, Image } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import PropTypes from 'prop-types';
 
@@ -27,6 +27,7 @@ class DetailsScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Image source={require('./assets/react_logo.png')} />
                 <Text style={{ color: 'red'}}>Details Screen</Text>
                 <View style={{marginBottom: 20}}>
                     <Button
