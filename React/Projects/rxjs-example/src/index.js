@@ -11,21 +11,21 @@ import { throttleTime, map, scan } from 'rxjs/operators';
 //     .pipe(scan(count => count + 1, 0))
 //     .subscribe(count => console.log(`Clicked ${count} times`));
 
-// fromEvent(document, 'click')
-//     .pipe(
-//         throttleTime(1000),
-//         scan(count => count + 1, 0)
-//     )
-//     .subscribe(count => console.log(`Clicked ${count} times`));
-
 fromEvent(document, 'click')
     .pipe(
         throttleTime(1000),
-        map(event => event.clientX),
-        scan((count, clientX) => count + clientX, 0)
+        scan(count => count + 1, 0)
     )
-    .subscribe(count => console.log(count));
+    .subscribe(count => console.log(`Clicked ${count} times`));
 
+// fromEvent(document, 'click')
+//     .pipe(
+//         throttleTime(1000),
+//         map(event => event.clientX),
+//         scan((count, clientX) => count + clientX, 0)
+//     )
+//     .subscribe(count => console.log(count));
+//
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
