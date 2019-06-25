@@ -2,6 +2,8 @@ import React from 'react';
 import { Observable } from 'rxjs';
 
 function Observables() {
+    console.log('** Observables **');
+
     let observable = new Observable(subscriber => {
         subscriber.next(1);
         subscriber.next(2);

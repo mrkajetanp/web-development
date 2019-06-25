@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Observables from './components/Observables';
 import Operators from './components/Operators';
+import Subscription from './components/Subscription';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo" />
                 <Observables />
                 <Operators />
+                <Subscription />
             </header>
         </div>
   );
