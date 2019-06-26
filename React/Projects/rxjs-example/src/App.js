@@ -4,6 +4,7 @@ import './App.css';
 import Observables from './components/Observables';
 import Operators from './components/Operators';
 import Subscription from './components/Subscription';
+import Subjects from './components/Subjects';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
                 <Observables />
                 <Operators />
                 <Subscription />
+                <Subjects />
             </header>
         </div>
   );
