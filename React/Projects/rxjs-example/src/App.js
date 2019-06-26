@@ -5,6 +5,7 @@ import Observables from './components/Observables';
 import Operators from './components/Operators';
 import Subscription from './components/Subscription';
 import Subjects from './components/Subjects';
+import Schedulers from './components/Schedulers';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                 <Operators />
                 <Subscription />
                 <Subjects />
+                <Schedulers />
             </header>
         </div>
   );
