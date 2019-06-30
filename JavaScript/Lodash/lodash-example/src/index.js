@@ -6,6 +6,12 @@ function component() {
     let separate = _.chunk(['a', 'b', 'c', 'd'], 2);
     console.log(separate);
 
+    _.forEach([1, 2], function(value) {
+        console.log(value);
+    });
+
+    _.forEach([3, 4], value => console.log(value));
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
