@@ -22,6 +22,15 @@ function component() {
       asyncSave({ 'type': type, 'complete': done });
     });
 
+    _.castArray(1);
+    // => [1]
+
+    _.castArray({ 'a': 1 });
+    // => [{ 'a': 1 }]
+
+    _.castArray('abc');
+    // => ['abc']
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
