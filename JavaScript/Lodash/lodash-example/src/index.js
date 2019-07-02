@@ -31,6 +31,8 @@ function component() {
     _.castArray('abc');
     // => ['abc']
 
+    _.max([4, 2, 8, 6]);
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
