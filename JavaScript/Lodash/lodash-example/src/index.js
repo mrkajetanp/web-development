@@ -33,6 +33,15 @@ function component() {
 
     _.max([4, 2, 8, 6]);
 
+    _.inRange(3, 2, 4);
+    // => true
+
+    _.inRange(4, 8);
+    // => true
+
+    _.inRange(4, 2);
+    // => false
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
