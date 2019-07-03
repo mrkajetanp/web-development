@@ -42,6 +42,20 @@ function component() {
     _.inRange(4, 2);
     // => false
 
+    function Foo() {
+      this.a = 1;
+    }
+
+    function Bar() {
+      this.c = 3;
+    }
+
+    Foo.prototype.b = 2;
+    Bar.prototype.d = 4;
+
+    _.assign({ 'a': 0 }, new Foo, new Bar);
+    // => { 'a': 1, 'c': 3 }
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
