@@ -72,6 +72,15 @@ function component() {
       .value();
     // => 'pebbles is 1'
 
+    _.camelCase('Foo Bar');
+    // => 'fooBar'
+
+    _.camelCase('--foo-bar--');
+    // => 'fooBar'
+
+    _.camelCase('__FOO_BAR__');
+    // => 'fooBar'
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
