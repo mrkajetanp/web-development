@@ -81,6 +81,18 @@ function component() {
     _.camelCase('__FOO_BAR__');
     // => 'fooBar'
 
+    _.range(4);
+    // => [0, 1, 2, 3]
+
+    _.range(-4);
+    // => [0, -1, -2, -3]
+
+    _.range(1, 5);
+    // => [1, 2, 3, 4]
+
+    _.range(0, 20, 5);
+    // => [0, 5, 10, 15]
+
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
