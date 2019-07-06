@@ -16,3 +16,12 @@ test('the shopping list has beer on it', () => {
   expect(shoppingList).toContain('beer');
   expect(new Set(shoppingList)).toContain('beer');
 });
+
+test('the data is peanut butter', done => {
+  function callback(data) {
+    expect(data).toBe('peanut butter');
+    done();
+  }
+
+  fetchData(callback);
+});
