@@ -8,10 +8,10 @@ const Thumb = props => (
 );
 
 Thumb.propTypes = {
-  alt: PropTypes.string,
-  title: PropTypes.string,
-  classes: PropTypes.string,
-  src: PropTypes.string.isRequired
+    alt: PropTypes.string,
+    title: PropTypes.string,
+    classes: PropTypes.string,
+    src: PropTypes.string.isRequired
 };
 
 export default Thumb;
