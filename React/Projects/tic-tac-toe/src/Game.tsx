@@ -1,30 +1,43 @@
 import React from 'react';
 
 type SquareProps = {
-  value: number;
-};
-
-type SquareState = {
   value: string;
+  onClick: () => void;
 };
 
-class Square extends React.Component<SquareProps, SquareState> {
-  state: SquareState = {
-    value: '',
-  }
-
+class Square extends React.Component<SquareProps> {
   render() {
     return (
-      <button className="square" onClick={() => this.setState({value: 'X'})}>
-        {this.state.value}
+      <button className="square"
+      onClick={() => this.props.onClick()}>
+        {this.props.value}
       </button>
     );
   }
 }
 
-class Board extends React.Component {
+type BoardProps = { };
+type BoardState = {
+  squares: Array<string>;
+};
+
+class Board extends React.Component<BoardProps, BoardState> {
+  state: BoardState = {
+    squares: Array(9).fill(''),
+  }
+
+  handleClick(i: number) {
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({squares: squares});
+  }
+
   renderSquare(i: number) {
-    return <Square value={i} />;
+    return (
+      <Square
+      value={this.state.squares[i]}
+      onClick={() => this.handleClick(i)} />
+    );
   }
 
   render() {
