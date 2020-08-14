@@ -1,0 +1,25 @@
+.box {
+    background-color: lightblue;
+    text-align: center;
+}
+
+/* .container { */
+    /* height: 100%; */
+/* } */
+
+.box .col,
+.box .col-md-auto,
+.box .col-4,
+.box .col-6,
+.box .col-sm {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.hbox {
+    height: 4em;
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+}

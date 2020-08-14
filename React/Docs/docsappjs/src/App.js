@@ -61,11 +61,40 @@ class ContextApp extends React.Component {
   }
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false,
+    };
+  }
+
+  static getDerivedFromError(error) {
+    return {
+      hasError: true,
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // logging shit here ...
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
 function App() {
   return (
     <div>
       <MarkdownEditor />
-      <ContextApp />
+      <ErrorBoundary>
+        <ContextApp />
+      </ErrorBoundary>
     </div>
   );
 }
