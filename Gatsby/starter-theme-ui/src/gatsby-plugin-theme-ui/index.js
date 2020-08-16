@@ -6,6 +6,7 @@ export default {
   colors: {
     ...deep.colors,
     primary: "red",
+    // background: "white",
   },
   styles: {
     ...deep.styles,

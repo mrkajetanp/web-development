@@ -93,11 +93,20 @@ function Footer() {
   )
 }
 
+function Hero() {
+  return (
+    <Flex sx={{ height: "100vh", background: "teal" }}>
+      <p>Hello there</p>
+    </Flex>
+  )
+}
+
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <Head />
+      <Box p={0} m={0}>
+        {/* <Head /> */}
+        <Hero />
         <Flex
           sx={{
             // background: "white",
@@ -115,7 +124,7 @@ export default class App extends React.Component {
           </Box>
           <Footer />
         </Flex>
-      </div>
+      </Box>
     )
   }
 }
