@@ -1,6 +1,8 @@
 import React from "react";
 import { Remarkable } from "remarkable";
 import "./App.css";
+import { observable, computed } from "mobx";
+import { observer } from "mobx-react";
 
 class MarkdownEditor extends React.Component {
   constructor(props) {
@@ -88,14 +90,70 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+class Todo {
+  id = Math.random();
+  @observable title = "";
+  @observable finished = false;
+}
+
+class TodoList {
+  @observable todos = [];
+  @computed get unfinishedTodoCount() {
+    return this.todos.filter((todo) => !todo.finished).length;
+  }
+}
+
+const TodoView = observer(({ todo }) => (
+  <li>
+    <input
+      type="checkbox"
+      checked={todo.finished}
+      onClick={() => (todo.finished = !todo.finished)}
+    />
+    {todo.title}
+  </li>
+));
+
+@observer
+class TodoListView extends React.Component {
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.props.todoList.todos.map((todo) => (
+            <TodoView todo={todo} key={todo.id} />
+          ))}
+        </ul>
+        Tasks left: {this.props.todoList.unfinishedTodoCount}
+      </div>
+    );
+  }
+}
+
+const store = new TodoList();
+const todo1 = new Todo();
+todo1.title = "Get Coffee";
+
+const todo2 = new Todo();
+todo2.title = "Write code";
+
+store.todos.push(todo1, todo2);
+
+class MobXApp extends React.Component {
+  render() {
+    return <TodoListView todoList={store} />;
+  }
+}
+
 function App() {
   return (
-    <div>
+    <>
       <MarkdownEditor />
       <ErrorBoundary>
         <ContextApp />
       </ErrorBoundary>
-    </div>
+      <MobXApp />
+    </>
   );
 }
 
