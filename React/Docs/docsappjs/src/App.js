@@ -1,6 +1,7 @@
 import React from "react";
 import { Remarkable } from "remarkable";
 import "./App.css";
+import Hooks from "./Hooks";
 import { observable, computed } from "mobx";
 import { observer } from "mobx-react";
 
@@ -148,6 +149,7 @@ class MobXApp extends React.Component {
 function App() {
   return (
     <>
+      <Hooks />
       <MarkdownEditor />
       <ErrorBoundary>
         <ContextApp />
